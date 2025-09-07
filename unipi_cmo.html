@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>unipi: The CMO's Data Co-Pilot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #EFF6FF;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#1D4ED8]">unipi</h1>
+            <p class="mt-4 text-xl md:text-2xl text-[#1E3A8A]">The CMO's Data Co-Pilot</p>
+            <p class="mt-2 text-base text-[#2563EB]">Transforming Data Drudgery into Strategic Advantage</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="problem" class="bg-white rounded-2xl shadow-lg p-6 md:p-10 text-center">
+                <h2 class="text-3xl font-bold text-[#1D4ED8] mb-4">The Marketing Data Disconnect</h2>
+                <p class="max-w-3xl mx-auto text-lg text-[#1E3A8A] mb-8">
+                    Your team spends hours manually pulling data from disparate platforms—analytics, CRM, social media. This tedious, time-consuming process creates a barrier to real-time insights, delaying critical decisions and hindering your ability to outpace the competition.
+                </p>
+                <div class="bg-[#DBEAFE] rounded-xl p-8">
+                    <p class="text-2xl font-semibold text-[#1E3A8A]">Your marketing team spends up to</p>
+                    <p class="text-7xl md:text-8xl font-extrabold text-[#2563EB] my-4">30%</p>
+                    <p class="text-2xl font-semibold text-[#1E3A8A]">of their time on manual data reporting.</p>
+                </div>
+            </section>
+            
+            <section id="how-it-works" class="text-center">
+                <h2 class="text-3xl font-bold text-[#1D4ED8] mb-4">Instant Insights, No Code Required</h2>
+                <p class="max-w-3xl mx-auto text-lg text-[#1E3A8A] mb-12">
+                    unipi works like a smart assistant for your marketing data. It unifies all your analytics and customer data, giving your team the power to get answers instantly through a simple, conversational interface.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 w-full">
+                    <div class="flex-1 flex flex-col items-center p-4">
+                        <div class="text-5xl mb-4">🎯</div>
+                        <h3 class="text-xl font-bold text-[#1E3A8A] mb-2">1. Ask a Question</h3>
+                        <p class="text-center text-[#2563EB] px-2">Your team prompts unipi with a marketing question, like "What was our bounce rate by region in Q3?"</p>
+                    </div>
+                    <div class="text-4xl text-[#3B82F6] rotate-90 md:rotate-0">➔</div>
+                    <div class="flex-1 flex flex-col items-center p-4">
+                        <div class="text-5xl mb-4">🧠</div>
+                        <h3 class="text-xl font-bold text-[#1E3A8A] mb-2">2. unipi Connects</h3>
+                        <p class="text-center text-[#2563EB] px-2">Our AI instantly connects to and pulls data from your Google Analytics, CRM, and other platforms.</p>
+                    </div>
+                    <div class="text-4xl text-[#3B82F6] rotate-90 md:rotate-0">➔</div>
+                    <div class="flex-1 flex flex-col items-center p-4">
+                        <div class="text-5xl mb-4">📈</div>
+                        <h3 class="text-xl font-bold text-[#1E3A8A] mb-2">3. unipi Analyzes</h3>
+                        <p class="text-center text-[#2563EB] px-2">The AI intelligently processes and synthesizes the data to find the exact answers you need.</p>
+                    </div>
+                    <div class="text-4xl text-[#3B82F6] rotate-90 md:rotate-0">➔</div>
+                     <div class="flex-1 flex flex-col items-center p-4">
+                        <div class="text-5xl mb-4">💡</div>
+                        <h3 class="text-xl font-bold text-[#1E3A8A] mb-2">4. You Get Insights</h3>
+                        <p class="text-center text-[#2563EB] px-2">Receive instant, unified insights without having to touch a single line of code or a dashboard.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="benefits">
+                 <h2 class="text-3xl font-bold text-[#1D4ED8] mb-10 text-center">Your Competitive Advantage, Quantified</h2>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+                    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col items-center text-center">
+                        <h3 class="text-2xl font-bold text-[#1E3A8A] mb-4">Time Reclaimed for Strategy</h3>
+                        <p class="text-[#2563EB] mb-6 h-16">unipi frees your team from the manual burden of reporting, allowing them to focus on high-impact strategic initiatives that drive business growth.</p>
+                        <div class="chart-container">
+                            <canvas id="timeSavedChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 flex flex-col items-center text-center">
+                        <h3 class="text-2xl font-bold text-[#1E3A8A] mb-4">Rapid Insight Generation</h3>
+                        <p class="text-[#2563EB] mb-6 h-16">Get critical marketing intelligence in minutes instead of hours. This speed allows for quicker campaign optimization and more agile decision-making.</p>
+                        <div class="chart-container">
+                            <canvas id="developmentSpeedChart"></canvas>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+            
+            <section id="tech-stack" class="text-center">
+                <h2 class="text-3xl font-bold text-[#1D4ED8] mb-10">Our Foundation: Enterprise-Grade Technology</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+                        <p class="text-4xl mb-3">🧠</p>
+                        <h3 class="text-xl font-bold text-[#1E3A8A] mb-2">Powerful AI</h3>
+                        <p class="text-[#2563EB]">Leveraging Google's and OpenAI's leading AI models for intelligent data synthesis.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+                        <p class="text-4xl mb-3">🛡️</p>
+                        <h3 class="text-xl font-bold text-[#1E3A8A] mb-2">Enterprise Security</h3>
+                        <p class="text-[#2563EB]">Robust authentication and secure gateways to protect your most valuable data.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+                        <p class="text-4xl mb-3">⚙️</p>
+                        <h3 class="text-xl font-bold text-[#1E3A8A] mb-2">Reliable Performance</h3>
+                        <p class="text-[#2563EB]">A high-performance backend built for speed and reliability.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+                         <p class="text-4xl mb-3">☁️</p>
+                        <h3 class="text-xl font-bold text-[#1E3A8A] mb-2">Scalable Cloud</h3>
+                        <p class="text-[#2563EB]">Hosted on Google Cloud to handle all your data, no matter the scale.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center py-16">
+            <h2 class="text-2xl md:text-4xl font-extrabold text-[#1D4ED8]">unipi: The data insights you need, at the speed of conversation.</h2>
+        </footer>
+    </div>
+
+<script>
+    const chartTooltipConfig = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            },
+            legend: {
+                labels: {
+                    color: '#1E3A8A',
+                    font: {
+                        size: 14
+                    }
+                }
+            }
+        }
+    };
+    
+    const timeSavedCtx = document.getElementById('timeSavedChart').getContext('2d');
+    new Chart(timeSavedCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Strategic Planning', 'Manual Reporting'],
+            datasets: [{
+                label: 'Team Time Allocation',
+                data: [80, 20],
+                backgroundColor: [
+                    '#2563EB',
+                    '#DBEAFE'
+                ],
+                borderColor: '#EFF6FF',
+                borderWidth: 4,
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '70%',
+            plugins: {
+                ...chartTooltipConfig.plugins,
+                title: {
+                    display: true,
+                    text: 'Focus on Strategy, Not Data Entry',
+                    color: '#1E3A8A',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    },
+                    padding: {
+                        bottom: 20
+                    }
+                }
+            }
+        }
+    });
+    
+    const devSpeedCtx = document.getElementById('developmentSpeedChart').getContext('2d');
+    new Chart(devSpeedCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Manual Report (4 hrs)', 'unipi (30 min)'],
+            datasets: [{
+                label: 'Time to Insight',
+                data: [4, 0.5],
+                backgroundColor: [
+                    '#93C5FD',
+                    '#2563EB'
+                ],
+                borderColor: [
+                    '#60A5FA',
+                    '#1D4ED8'
+                ],
+                borderWidth: 1,
+                borderRadius: 5
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#DBEAFE'
+                    },
+                    ticks: {
+                       color: '#1E3A8A'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: '#1E3A8A'
+                    }
+                }
+            },
+            plugins: {
+                 ...chartTooltipConfig.plugins,
+                title: {
+                    display: true,
+                    text: 'Get Answers in Minutes, Not Hours',
+                    color: '#1E3A8A',
+                    font: {
+                        size: 16,
+                        weight: 'bold'
+                    },
+                    padding: {
+                        bottom: 20
+                    }
+                },
+                legend: {
+                   display: false
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
